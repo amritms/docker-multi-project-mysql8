@@ -1,0 +1,15 @@
+mysql8:
+  image: mysql:8
+  ports:
+    - "33061:3306"
+  volumes:
+    - ~/db/mysql8:/var/lib/mysql8
+    - ./config.cnf:/etc/mysql8/conf.d/config.cnf
+  environment:
+    TERM: xterm
+    APP_ENV: dev
+    MYSQL_USER: root
+    MYSQL_PASSWORD: root
+    MYSQL_DATABASE:
+    MYSQL_ROOT_PASSWORD: root
+  container_name: mysql8
